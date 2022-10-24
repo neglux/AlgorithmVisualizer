@@ -1,0 +1,14 @@
+html {
+  font-size: 62.5%; // 1rem = 10px
+
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+
+  font-family: $font-primary;
+
+  color: $color-text;
+  background-color: $color-primary-light;
+}
