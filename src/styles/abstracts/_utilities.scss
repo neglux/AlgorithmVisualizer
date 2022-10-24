@@ -1,3 +1,59 @@
 .u-shrink {
   flex: 1;
 }
+
+.u-row-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.u-col-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.u-center-horizontal {
+  width: min-content;
+  margin: 0 auto;
+}
+
+.u-center-vertical {
+  height: min-content;
+  margin: auto 0;
+}
+
+.u-margin-y-lg {
+  margin: 6rem 0;
+}
+
+.u-margin-y-md {
+  margin: 4rem 0;
+}
+
+.u-margin-y-sm {
+  margin: 2rem 0;
+}
+
+.u-margin-x-lg {
+  margin: 0 6rem;
+}
+
+.u-margin-x-md {
+  margin: 0 4rem;
+}
+
+.u-margin-x-sm {
+  margin: 0 2rem;
+}
+
+.u-padding-full {
+  padding: 4rem;
+}
+
+.u-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.hidden {
+  display: none;
+}
