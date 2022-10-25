@@ -1,0 +1,21 @@
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  padding: 1rem 0;
+
+  &__item {
+    margin: 0 1rem;
+    width: 20px;
+    background-color: $color-secondary-light;
+
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  &__item:active {
+    transform: translateX($distance);
+  }
+}
