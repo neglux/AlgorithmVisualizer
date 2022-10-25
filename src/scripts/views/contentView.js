@@ -9,6 +9,9 @@ class ContentView extends View {
           <h1 class="heading-primary">${this._data.title}</h1>
         </div>
         <div class="row u-margin-y-md">
+            <article class="canvas">
+              ${this._data.data.map(this._generateFigure).join("")}
+            </article>
         </div>
         <div class="row u-col-box u-center-horizontal">
           <button class="btn-rect">
@@ -31,6 +34,10 @@ class ContentView extends View {
           </button>
         </div>
       `;
+  }
+
+  _generateFigure(height) {
+    return `<figure style="height: ${height}px" class="canvas__item"></figure>`;
   }
 
   addHashChangeHandler(handler) {
