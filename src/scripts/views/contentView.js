@@ -19,7 +19,7 @@ class ContentView extends View {
               <use xlink:href="./assets/sprite.svg#icon-media-stop"></use>
             </svg>
           </button>
-          <button class="btn-rect u-margin-x-sm">
+          <button class="btn-rect u-margin-x-sm play-btn">
             <svg class="icon">
               <use xlink:href="./assets/sprite.svg#icon-media-play"></use>
             </svg>
@@ -36,8 +36,8 @@ class ContentView extends View {
       `;
   }
 
-  _generateFigure(height) {
-    return `<figure style="height: ${height}px" class="canvas__item"></figure>`;
+  _generateFigure(height, index) {
+    return `<figure style="height: ${height}px" class="canvas__item" data-index=${index}></figure>`;
   }
 
   addHashChangeHandler(handler) {
@@ -46,6 +46,15 @@ class ContentView extends View {
         const algoName = window.location.hash.slice(1);
         handler(algoName);
       });
+    });
+  }
+
+  addStartHandler(handler) {
+    this._parent.addEventListener("click", (e) => {
+      const btn = e.target.closest(".play-btn");
+      if (!btn) return;
+
+      handler();
     });
   }
 }
