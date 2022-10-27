@@ -14,7 +14,7 @@ class ContentView extends View {
             </article>
         </div>
         <div class="row u-col-box u-center-horizontal">
-          <button class="btn-rect">
+          <button class="btn-rect stop-btn">
             <svg class="icon">
               <use xlink:href="./assets/sprite.svg#icon-media-stop"></use>
             </svg>
@@ -22,14 +22,6 @@ class ContentView extends View {
           <button class="btn-rect u-margin-x-sm play-btn">
             <svg class="icon">
               <use xlink:href="./assets/sprite.svg#icon-media-play"></use>
-            </svg>
-            <svg class="icon u-rotate-90 hidden">
-              <use xlink:href="./assets/sprite.svg#icon-equals"></use>
-            </svg>
-          </button>
-          <button class="btn-rect">
-            <svg class="icon">
-              <use xlink:href="./assets/sprite.svg#icon-arrow-sync"></use>
             </svg>
           </button>
         </div>
@@ -52,6 +44,15 @@ class ContentView extends View {
   addStartHandler(handler) {
     this._parent.addEventListener("click", (e) => {
       const btn = e.target.closest(".play-btn");
+      if (!btn) return;
+
+      handler();
+    });
+  }
+
+  addResetHandler(handler) {
+    this._parent.addEventListener("click", (e) => {
+      const btn = e.target.closest(".stop-btn");
       if (!btn) return;
 
       handler();
