@@ -1,6 +1,6 @@
 import { bubbleSort, insertionSort, selectionSort } from "./codes";
 
-const data = [57, 17, 34, 21, 25, 44, 10, 13];
+const data = [32, 57, 17, 34, 25, 44, 30, 23, 40, 15, 62];
 
 export default [
   {
