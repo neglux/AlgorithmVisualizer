@@ -21,11 +21,6 @@ export default [
   },
   {
     id: 4,
-    name: "mergesort",
-    title: "MergeSort",
-  },
-  {
-    id: 5,
     name: "quicksort",
     title: "QuickSort",
   },
