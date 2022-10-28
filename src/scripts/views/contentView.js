@@ -16,7 +16,7 @@ class ContentView extends View {
         <div class="row u-col-box u-center-horizontal">
           <button class="btn-rect stop-btn">
             <svg class="icon">
-              <use xlink:href="./assets/sprite.svg#icon-media-stop"></use>
+              <use xlink:href="./assets/sprite.svg#icon-arrow-sync"></use>
             </svg>
           </button>
           <button class="btn-rect u-margin-x-sm play-btn">
