@@ -25,7 +25,7 @@ const controlContent = async (name) => {
 };
 
 const controlStartAnimation = () => {
-  animator.animate(model.state.algorithm);
+  if (!animator.isRunning) animator.animate(model.state.algorithm);
 };
 
 const controlResetAnimation = () => {
