@@ -1,0 +1,46 @@
+.figure {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  transform: rotate(30deg);
+  &__link {
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+
+  &__img {
+    cursor: pointer;
+    width: 65px;
+    transition: all 0.5s;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    right: -3rem;
+
+    width: 120px;
+    height: 50px;
+
+    background-color: #ffffff;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+    transform: rotate(180deg);
+    transition: all 0.5s;
+  }
+
+  &:hover {
+    .figure__img {
+      transform: rotate(-10deg);
+    }
+
+    &::after {
+      transform: rotate(170deg) translateY(-90px);
+      width: 300px;
+      height: 90px;
+    }
+  }
+}
