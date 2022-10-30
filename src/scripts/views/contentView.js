@@ -1,4 +1,5 @@
 import { View } from "./View";
+import hljs from "highlight.js";
 
 class ContentView extends View {
   _parent = document.querySelector(".content");
@@ -25,11 +26,34 @@ class ContentView extends View {
             </svg>
           </button>
         </div>
+        <div class="row">
+         ${this._generateSourceCode(this._data.code)}
+        </div>
       `;
   }
 
   _generateFigure(height, index) {
     return `<figure style="height: ${height}px" class="canvas__item" data-index=${index}></figure>`;
+  }
+
+  _generateSourceCode(codeStr) {
+    const markup = `
+      <code class="preview__code language-javascript">
+      ${codeStr}
+     </code>
+    `;
+
+    const domFromMarkup = document
+      .createRange()
+      .createContextualFragment(markup);
+
+    const code = domFromMarkup.querySelector(".preview__code");
+    hljs.highlightElement(code);
+
+    return `
+     <pre class="preview">
+      ${code.outerHTML}
+    </pre>`;
   }
 
   addHashChangeHandler(handler) {
