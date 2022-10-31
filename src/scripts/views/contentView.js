@@ -1,5 +1,9 @@
 import { View } from "./View";
 import hljs from "highlight.js";
+import "../../assets/SVG/cheveron-right.svg";
+
+import "../../assets/SVG/arrow-sync.svg";
+import "../../assets/SVG/media-play.svg";
 
 class ContentView extends View {
   _parent = document.querySelector(".content");
@@ -17,12 +21,12 @@ class ContentView extends View {
         <div class="row u-col-box u-center-horizontal">
           <button class="btn-rect stop-btn">
             <svg class="icon">
-              <use xlink:href="./assets/sprite.svg#icon-arrow-sync"></use>
+              <use xlink:href="#arrow-sync"></use>
             </svg>
           </button>
           <button class="btn-rect u-margin-x-sm play-btn">
             <svg class="icon">
-              <use xlink:href="./assets/sprite.svg#icon-media-play"></use>
+              <use xlink:href="#media-play"></use>
             </svg>
           </button>
         </div>

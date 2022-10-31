@@ -9,15 +9,15 @@ module.exports = merge(common, {
   output: {
     filename: "[name]-[contenthash].js",
     path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "assets/[name]-[hash][ext]",
     clean: true,
+    assetModuleFilename: "assets/[name][ext]",
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name]-[contenthash].css",
     }),
     new HtmlWebpackPlugin({
-      filename: "[name]-[contenthash].html",
+      filename: "index.html",
       template: "./src/template.html",
     }),
   ],
@@ -36,6 +36,10 @@ module.exports = merge(common, {
             presets: ["@babel/preset-env"],
           },
         },
+      },
+      {
+        test: /\.svg$/,
+        use: "svg-sprite-loader",
       },
     ],
   },
